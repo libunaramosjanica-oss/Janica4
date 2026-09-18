@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Jancal WiFi Manager</title>
+
+
+<style>
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: #f4f0ec;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #252b3d;
+
+}
+
+
+.card {
+
+    width: 100%;
+
+    max-width: 470px;
+
+    padding: 34px;
+
+    background: #fbfaf8;
+
+    border: 1px solid #ddd8d2;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(40,40,50,0.08);
+
+}
+
+
+.logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #d9d1e8;
+
+    color: #354568;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+}
+
+
+.subtitle {
+
+    margin-top: 7px;
+
+    margin-bottom: 28px;
+
+    color: #858995;
+
+    font-size: 13px;
+
+}
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #555b69;
+
+}
+
+
+input {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #d9d5d0;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #252b3d;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+input:focus {
+
+    border-color: #344773;
+
+}
+
+
+button {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #344773;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    background: #26375f;
+
+}
+
+
+.info {
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: #eef1f6;
+
+    color: #687080;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+    <div class="logo">
+        J
+    </div>
+
+
+    <h1>
+        Jancal WiFi Manager
+    </h1>
+
+
+    <p class="subtitle">
+        Configure the ESP32 network connection
+    </p>
+
+
+    <form method="POST" action="/">
+
+
+        <label>
+            WiFi SSID
+        </label>
+
+
+        <input
+            type="text"
+            name="ssid"
+            placeholder="Enter WiFi name"
+            required
+        >
+
+
+        <label>
+            WiFi Password
+        </label>
+
+
+        <input
+            type="password"
+            name="pass"
+            placeholder="Enter WiFi password"
+            required
+        >
+
+
+        <label>
+            Static IP
+        </label>
+
+
+        <input
+            type="text"
+            name="ip"
+            placeholder="Example: 192.168.1.50"
+        >
+
+
+        <label>
+            Gateway
+        </label>
+
+
+        <input
+            type="text"
+            name="gateway"
+            placeholder="Example: 192.168.1.1"
+        >
+
+
+        <button type="submit">
+            Save & Restart
+        </button>
+
+
+    </form>
+
+
+    <div class="info">
+
+        Leave Static IP and Gateway blank if you want
+        the router to automatically assign an IP address.
+
+        <br><br>
+
+        After saving, the ESP32 will restart and
+        attempt to connect to the new WiFi network.
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
